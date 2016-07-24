@@ -12,7 +12,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password'
     ];
 
     /**
@@ -21,6 +21,14 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password', 'created_at','updated_at', 'fk_user_status', 'fk_user_types'
     ];
+    public function type()
+    {
+        return $this->belongsTo('App\UserType','fk_user_types','id');
+    }
+    public function status()
+    {
+        return $this->belongsTo('App\UserStatus','fk_user_status','id');
+    }
 }
