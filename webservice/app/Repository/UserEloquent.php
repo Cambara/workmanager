@@ -68,7 +68,7 @@ class UserEloquent
      */
     public function findAll()
     {
-        return $this->u->all();
+        return $this->u->with(["type","status"])->get();
     }
 
 }

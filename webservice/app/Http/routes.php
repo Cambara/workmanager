@@ -20,4 +20,5 @@ Route::group(['prefix' => 'user'],function(){
     Route::get('{id}',['uses' => 'UserController@show']);
     Route::post('',['uses' => 'UserController@store']);
     Route::put('{id}',['uses' => 'UserController@update']);
+    Route::delete('{id}',['uses' => 'UserController@destroy']);
 });
