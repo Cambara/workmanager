@@ -26,6 +26,6 @@ class CreateUserStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_statuses');
+        Schema::drop('user_status');
     }
 }
