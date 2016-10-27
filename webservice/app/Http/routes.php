@@ -22,3 +22,11 @@ Route::group(['prefix' => 'user'],function(){
     Route::put('{id}',['uses' => 'UserController@update']);
     Route::delete('{id}',['uses' => 'UserController@destroy']);
 });
+
+Route::group(['prefix' => 'business'],function(){
+    Route::get('',['uses' => 'BusinessController@index']);
+    Route::get('{id}',['uses' => 'BusinessController@show']);
+    Route::post('',['uses'=> 'BusinessController@store']);
+    Route::put('{id}',['uses'=> 'BusinessController@update']);
+    Route::delete('{id}',['uses'=> 'BusinessController@destroy']);
+});
