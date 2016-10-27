@@ -32,3 +32,9 @@ $factory->define(App\UserType::class,function (Faker\Generator $faker){
      'description' => $faker->word
    ];
 });
+$factory->define(App\Business::class,function (Faker\Generator $faker){
+   return[
+    'name' => $faker->country
+   ];
+});
+
