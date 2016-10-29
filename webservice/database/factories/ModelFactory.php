@@ -33,8 +33,18 @@ $factory->define(App\UserType::class,function (Faker\Generator $faker){
    ];
 });
 $factory->define(App\Business::class,function (Faker\Generator $faker){
-   return[
+   return [
     'name' => $faker->country
    ];
 });
+$factory->define(App\WorkTable::class,function (Faker\Generator $faker){
+    return [
+        'fk_user' => rand(1,10),
+        'fk_business' => rand(1,10),
+        'description' => $faker->text,
+        'day' => $faker->dateTimeThisMonth,
+
+    ];
+});
+
 
