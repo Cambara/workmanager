@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class WorkTable extends Model
 {
-    protected $fillable = ['description','day','fk_business'];
+    protected $fillable = ['description','day','fk_business','fk_user'];
+
+    protected $hidden = ['fk_business','fk_user'];
 
     public function user()
     {
