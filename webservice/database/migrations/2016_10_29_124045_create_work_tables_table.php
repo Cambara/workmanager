@@ -14,10 +14,10 @@ class CreateWorkTablesTable extends Migration
     {
         Schema::create('work_tables', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('fk_user',false,true);
-            $table->foreign('fk_user')->references('id')->on('users');
-            $table->integer('fk_business',false,true);
-            $table->foreign('fk_business')->references('id')->on('businesses');
+            $table->integer('fk_user',false,true)->nullable();
+            $table->foreign('fk_user')->references('id')->on('users')->onDelete('set null');
+            $table->integer('fk_business',false,true)->nullable();
+            $table->foreign('fk_business')->references('id')->on('businesses')->onDelete('set null');
             $table->text('description');
             $table->date('day');
             $table->timestamps();

@@ -13,10 +13,10 @@ class AddColumnUserTypeUserStatusInUser extends Migration
     public function up()
     {
         Schema::table('users', function(Blueprint $table) {
-            $table->integer('fk_user_status')->length(10)->unsigned();
-            $table->integer('fk_user_types')->length(10)->unsigned();
-            $table->foreign('fk_user_status')->references('id')->on('user_status');
-            $table->foreign('fk_user_types')->references('id')->on('user_types');
+            $table->integer('fk_user_status')->length(10)->unsigned()->nullable();
+            $table->integer('fk_user_types')->length(10)->unsigned()->nullable();
+            $table->foreign('fk_user_status')->references('id')->on('user_status')->onDelete('set null');
+            $table->foreign('fk_user_types')->references('id')->on('user_types')->onDelete('set null');
         });
     }
 
